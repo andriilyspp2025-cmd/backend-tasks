@@ -39,4 +39,28 @@ docker build -t meduzzen-backend .
 ```bash
 docker run -p 8000:8000 meduzzen-backend
 ```
-The application will be available at http://127.0.0.1:8000 or http://localhost:8000.
+The application will be available at http://localhost:8000.
+---
+##  Infrastructure & Database Setup (Task #3)
+
+This project integrates **PostgreSQL** (relational database) and **Redis** (cache) using Docker Compose.
+
+
+###  Running the Project
+To start the application along with the databases, run:
+
+```bash
+docker-compose up --build
+```
+This command will spin up three containers:
+
+1. app (FastAPI backend)
+
+2. db (PostgreSQL 15)
+
+3. redis_cache (Redis 7)
+
+Verification
+Once the containers are running, you can verify the connection to both databases by visiting the health check endpoint:
+
+http://localhost:8000/api/healthchecker
