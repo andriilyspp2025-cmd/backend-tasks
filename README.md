@@ -39,4 +39,4 @@ docker build -t meduzzen-backend .
 ```bash
 docker run -p 8000:8000 meduzzen-backend
 ```
-The application will be available at http://127.0.0.1:8000 or http://localhost:8000.
+The application will be available at http://localhost:8000/healthcheck.
