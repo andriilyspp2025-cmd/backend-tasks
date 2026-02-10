@@ -9,11 +9,9 @@ app=FastAPI()
 
 app.include_router(health.router)
 
-origins = ["*"]
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=settings.CORS_ORIGINS, 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -24,6 +22,6 @@ if __name__ == "__main__":
         "app.main:app", 
         host=settings.APP_HOST, 
         port=settings.APP_PORT, 
-        reload=True
+        reload=settings.DEBUG
     )
     
