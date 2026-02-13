@@ -1,5 +1,6 @@
 # backend-tasks
-How to start the application:
+
+## How to start the application:
 1. Create and activate venv
 Windows:
 ```bash
@@ -27,3 +28,15 @@ How to Execute Tests:
 ```Bash
 pytest
 ```
+---
+## Docker 
+To run the application using Docker:
+### 1. Build the image
+```bash
+docker build -t meduzzen-backend .
+```
+### 2. Run the container
+```bash
+docker run -p 8000:8000 meduzzen-backend
+```
+The application will be available at http://localhost:8000/healthcheck.
