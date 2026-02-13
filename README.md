@@ -63,4 +63,4 @@ This command will spin up three containers:
 Verification
 Once the containers are running, you can verify the connection to both databases by visiting the health check endpoint:
 
-http://localhost:8000/api/healthchecker
+http://localhost:8000/healthcheck
