@@ -64,3 +64,38 @@ Verification
 Once the containers are running, you can verify the connection to both databases by visiting the health check endpoint:
 
 http://localhost:8000/healthcheck
+
+---
+
+---
+
+## Database Migrations (Alembic)
+
+This project uses Alembic for handling database migrations.
+
+### 1. Initialize Migration
+If you make changes to the `app/models/` files, generate a new migration script:
+```bash
+docker-compose exec app alembic revision --autogenerate -m "Description of changes"
+```
+
+### 2. Apply Migration
+To apply the pending migrations to your database:
+```bash
+docker-compose exec app alembic upgrade head
+```
+
+### 3. Check Status
+To see the current revision of the database:
+```bash
+docker-compose exec app alembic current
+```
+
+## Logging
+Logging is configured in `app/core/logger.py`. Logs are output to `stdout`.
+To use the logger in a file:
+```python
+from app.core.logger import logger
+logger.info("Your message here")
+```
+
